@@ -9,31 +9,25 @@ def copy_data_from_old_letting_to_letting(apps, schema_editor):
     # Obtenez les modèles des anciennes et nouvelles tables
     OldLetting = apps.get_model('oc_lettings_site', 'Letting')
     Letting = apps.get_model('lettings', 'Letting')
+    Address = apps.get_model('lettings', 'Address')
 
     # Copiez les données de l'ancienne table Letting vers la nouvelle table Letting
     old_data = OldLetting.objects.all()
     for old_entry in old_data:
-        Letting.objects.create(
-            title=old_entry.title,
-            address=old_entry.address,
+        # Créez une nouvelle instance du modèle Address à partir des données de l'ancienne table
+        address_instance = Address.objects.create(
+            number=old_entry.address.number,
+            street=old_entry.address.street,
+            city=old_entry.address.city,
+            state=old_entry.address.state,
+            zip_code=old_entry.address.zip_code,
+            country_iso_code=old_entry.address.country_iso_code,
         )
 
-
-def copy_data_from_old_address_to_address(apps, schema_editor):
-    # Obtenez les modèles des anciennes et nouvelles tables
-    OldAddress = apps.get_model('oc_lettings_site', 'Address')
-    Address = apps.get_model('lettings', 'Address')
-
-    # Copiez les données de l'ancienne table Address vers la nouvelle table Address
-    old_data = OldAddress.objects.all()
-    for old_entry in old_data:
-        Address.objects.create(
-            number=old_entry.number,
-            street=old_entry.street,
-            city=old_entry.city,
-            state=old_entry.state,
-            zip_code=old_entry.zip_code,
-            country_iso_code=old_entry.country_iso_code,
+        # Créez une nouvelle instance du modèle Letting en utilisant la nouvelle instance de l'Address
+        Letting.objects.create(
+            title=old_entry.title,
+            address=address_instance,
         )
 
 
@@ -66,5 +60,4 @@ class Migration(migrations.Migration):
             ],
         ),
         migrations.RunPython(copy_data_from_old_letting_to_letting),
-        migrations.RunPython(copy_data_from_old_address_to_address),
     ]
