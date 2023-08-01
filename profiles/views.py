@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import Profile
+import sentry_sdk
 
 
 # Sed placerat quam in pulvinar commodo. Nullam laoreet consectetur ex, sed
@@ -7,9 +8,15 @@ from .models import Profile
 # faucibus, urna quis auctor pharetra, massa dolor cursus neque, quis dictum
 # lacus d
 def index(request):
-    profiles_list = Profile.objects.all()
-    context = {'profiles_list': profiles_list}
-    return render(request, 'profiles/index.html', context)
+    try:
+        profiles_list = Profile.objects.all()
+        context = {'profiles_list': profiles_list}
+        return render(request, 'profiles/index.html', context)
+    except Exception as e:
+        # Enregistrement de l'exception dans les logs de Sentry
+        sentry_sdk.capture_exception(e)
+        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
+        return render(request, 'error.html', {'error_message': str(e)})
 
 
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac
@@ -18,6 +25,12 @@ def index(request):
 # it. Nam aliquam dignissim congue. Pellentesque habitant morbi tristique
 # senectus et netus et males
 def profile(request, username):
-    profile = Profile.objects.get(user__username=username)
-    context = {'profile': profile}
-    return render(request, 'profiles/profile.html', context)
+    try:
+        profile = Profile.objects.get(user__username=username)
+        context = {'profile': profile}
+        return render(request, 'profiles/profile.html', context)
+    except Exception as e:
+        # Enregistrement de l'exception dans les logs de Sentry
+        sentry_sdk.capture_exception(e)
+        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
+        return render(request, 'error.html', {'error_message': str(e)})
