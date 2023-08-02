@@ -1,6 +1,7 @@
 import os
 
 from pathlib import Path
+from configparser import ConfigParser
 
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -8,9 +9,19 @@ from sentry_sdk.integrations.django import DjangoIntegration
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+script_dir = os.path.dirname(os.path.abspath(__file__))
+root_dir = os.path.dirname(script_dir)
+config_file = os.path.join(root_dir, 'config.ini')
+
+config = ConfigParser()
+config.read(config_file)
+
+django_secret_key = config.get('django', 'secret_key', raw=True)
+sentry_dsn = config.get('sentry', 'dsn', raw=True)
+
 # Configure Sentry
 sentry_sdk.init(
-    dsn="https://23d51a3c35d65b00303f34369a958aaf@o4505604593876992.ingest.sentry.io/4505632002080768",
+    dsn=sentry_dsn,
     integrations=[DjangoIntegration()],
 
     # Set traces_sample_rate to 1.0 to capture 100%
@@ -27,7 +38,7 @@ sentry_sdk.init(
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
+SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True

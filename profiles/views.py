@@ -8,6 +8,17 @@ import sentry_sdk
 # faucibus, urna quis auctor pharetra, massa dolor cursus neque, quis dictum
 # lacus d
 def index(request):
+    """
+    Affiche la liste de tous les profils.
+
+    Args:
+        request (HttpRequest): L'objet HttpRequest
+            qui représente la requête HTTP.
+
+    Returns:
+        HttpResponse: L'objet HttpResponse qui représente la réponse HTTP.
+
+    """
     try:
         profiles_list = Profile.objects.all()
         context = {'profiles_list': profiles_list}
@@ -23,6 +34,19 @@ def index(request):
 # it. Nam aliquam dignissim congue. Pellentesque habitant morbi tristique
 # senectus et netus et males
 def profile(request, username):
+    """
+    Affiche le profil d'un utilisateur en fonction de son nom d'utilisateur.
+
+    Args:
+        request (HttpRequest): L'objet HttpRequest
+            qui représente la requête HTTP.
+        username (str): Le nom d'utilisateur de l'utilisateur
+            dont le profil doit être affiché.
+
+    Returns:
+        HttpResponse: L'objet HttpResponse qui représente la réponse HTTP.
+
+    """
     try:
         profile = get_object_or_404(Profile, user__username=username)
         context = {'profile': profile}

@@ -3,6 +3,21 @@ import sys
 
 
 def main():
+    """
+    Point d'entrée principal pour l'exécution des commandes Django
+        depuis la ligne de commande.
+
+    Cette fonction configure le module de paramètres Django
+        et exécute les commandes spécifiées dans la ligne de commande.
+
+    Returns:
+        None
+
+    Raises:
+        ImportError: Si Django n'est pas installé ou
+            n'est pas disponible sur le PYTHONPATH.
+
+    """
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'oc_lettings_site.settings')
     try:
         from django.core.management import execute_from_command_line
