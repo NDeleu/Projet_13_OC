@@ -18,7 +18,7 @@ def index(request):
         # Enregistrement de l'exception dans les logs de Sentry
         sentry_sdk.capture_exception(e)
         # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
-        return render(request, 'error.html', {'error_message': str(e)})
+        return render(request, 'error.html', {'error_message': str(e)}, status=500)
 
 
 def trigger_error(request):
@@ -26,4 +26,4 @@ def trigger_error(request):
         division_by_zero = 1 / 0
     except ZeroDivisionError as e:
         sentry_sdk.capture_exception(e)
-        return render(request, 'error.html', {'error_message': str(e)})
+        return render(request, 'error.html', {'error_message': str(e)}, status=500)

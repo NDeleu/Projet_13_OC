@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Profile
 import sentry_sdk
 
@@ -13,9 +13,7 @@ def index(request):
         context = {'profiles_list': profiles_list}
         return render(request, 'profiles/index.html', context)
     except Exception as e:
-        # Enregistrement de l'exception dans les logs de Sentry
         sentry_sdk.capture_exception(e)
-        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
         return render(request, 'error.html', {'error_message': str(e)})
 
 
@@ -26,11 +24,9 @@ def index(request):
 # senectus et netus et males
 def profile(request, username):
     try:
-        profile = Profile.objects.get(user__username=username)
+        profile = get_object_or_404(Profile, user__username=username)
         context = {'profile': profile}
         return render(request, 'profiles/profile.html', context)
     except Exception as e:
-        # Enregistrement de l'exception dans les logs de Sentry
         sentry_sdk.capture_exception(e)
-        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
         return render(request, 'error.html', {'error_message': str(e)})
