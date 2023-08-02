@@ -5,20 +5,6 @@ from django.db import migrations, models
 import django.db.models.deletion
 
 
-def copy_data_from_old_profile_to_profile(apps, schema_editor):
-    # Obtenez les modèles des anciennes et nouvelles tables
-    OldProfile = apps.get_model('oc_lettings_site', 'Profile')
-    Profile = apps.get_model('profiles', 'Profile')
-
-    # Copiez les données de l'ancienne table Profile vers la nouvelle table Profile
-    old_data = OldProfile.objects.all()
-    for old_entry in old_data:
-        Profile.objects.create(
-            favorite_city=old_entry.favorite_city,
-            user=old_entry.user,
-        )
-
-
 class Migration(migrations.Migration):
 
     initial = True
@@ -36,5 +22,4 @@ class Migration(migrations.Migration):
                 ('user', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
             ],
         ),
-        migrations.RunPython(copy_data_from_old_profile_to_profile),
     ]

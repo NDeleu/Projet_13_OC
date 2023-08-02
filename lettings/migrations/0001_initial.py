@@ -5,32 +5,6 @@ from django.db import migrations, models
 import django.db.models.deletion
 
 
-def copy_data_from_old_letting_to_letting(apps, schema_editor):
-    # Obtenez les modèles des anciennes et nouvelles tables
-    OldLetting = apps.get_model('oc_lettings_site', 'Letting')
-    Letting = apps.get_model('lettings', 'Letting')
-    Address = apps.get_model('lettings', 'Address')
-
-    # Copiez les données de l'ancienne table Letting vers la nouvelle table Letting
-    old_data = OldLetting.objects.all()
-    for old_entry in old_data:
-        # Créez une nouvelle instance du modèle Address à partir des données de l'ancienne table
-        address_instance = Address.objects.create(
-            number=old_entry.address.number,
-            street=old_entry.address.street,
-            city=old_entry.address.city,
-            state=old_entry.address.state,
-            zip_code=old_entry.address.zip_code,
-            country_iso_code=old_entry.address.country_iso_code,
-        )
-
-        # Créez une nouvelle instance du modèle Letting en utilisant la nouvelle instance de l'Address
-        Letting.objects.create(
-            title=old_entry.title,
-            address=address_instance,
-        )
-
-
 class Migration(migrations.Migration):
 
     initial = True
@@ -59,5 +33,4 @@ class Migration(migrations.Migration):
                 ('address', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='lettings.Address')),
             ],
         ),
-        migrations.RunPython(copy_data_from_old_letting_to_letting),
     ]
