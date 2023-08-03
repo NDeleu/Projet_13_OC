@@ -12,13 +12,12 @@ build-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
-    DJANGO_STATUS: $DJANGO_STATUS_PROD_GITLAB
+    DJANGO_STATUS: $DJANGO_STATUS_DEV_GITLAB
   script:
     - printenv
     - pip install --upgrade pip
     - pip install -r requirements.txt
     - python replace_config.py
-    - python debug_info.py
     - echo "Compile complete."
 
 lint-test-job:
