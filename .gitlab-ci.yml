@@ -14,6 +14,7 @@ build-job:
     SENTRY_DSN: $SENTRY_DSN_GITLAB
     DJANGO_STATUS: $DJANGO_STATUS_DEV_GITLAB
   script:
+    - printenv
     - pip install --upgrade pip
     - pip install -r requirements.txt
     - python replace_config.py
