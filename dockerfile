@@ -4,7 +4,7 @@ FROM amazonlinux:2023
 # Installez les outils de développement et Python
 RUN yum -y update && \
     yum -y groupinstall "Development Tools" && \
-    yum -y install python3
+    yum -y install python3 python3-pip
 
 # Configurez les variables d'environnement Django
 ARG DJANGO_SECRET_KEY
