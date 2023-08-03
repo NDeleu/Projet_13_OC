@@ -12,7 +12,7 @@ build-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
-    DJANGO_STATUS: $DJANGO_STATUS_DEV_GITLAB
+    DJANGO_STATUS: $DJANGO_STATUS_PROD_GITLAB
   script:
     - printenv
     - pip install --upgrade pip
