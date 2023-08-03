@@ -14,9 +14,9 @@ build-job:
     SENTRY_DSN: $SENTRY_DSN_GITLAB
     DJANGO_STATUS: $DJANGO_STATUS_DEV_GITLAB
   script:
-    - echo $DJANGO_SECRET_KEY
-    - echo $SENTRY_DSN
-    - echo $DJANGO_STATUS
+    - echo "$DJANGO_SECRET_KEY"
+    - echo "$SENTRY_DSN"
+    - echo "$DJANGO_STATUS"
     - pip install --upgrade pip
     - pip install -r requirements.txt
     - python replace_config.py $DJANGO_SECRET_KEY $SENTRY_DSN $DJANGO_STATUS
