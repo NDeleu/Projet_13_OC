@@ -20,7 +20,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Exécutez les migrations Django
-RUN python3 replace_config.py && \
+RUN python3 replace_config.py DJANGO_SECRET_KEY SENTRY_DSN DJANGO_STATUS && \
     python3 manage.py migrate
 
 # Exposez le port 8000
