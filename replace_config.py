@@ -10,7 +10,7 @@ if not os.path.exists(config_file_path):
     with open(config_file_path, 'w') as configfile:
         config = configparser.ConfigParser()
         config['django'] = {'secret_key': 'default_secret_key'}
-        config['django'] = {'status': 'production'}
+        config['config'] = {'status': 'production'}
         config['sentry'] = {'dsn': 'default_sentry_dsn'}
         config.write(configfile)
 
@@ -24,11 +24,11 @@ config.read(config_file_path)
 
 if config['django']['secret_key'] == 'default_secret_key' \
         or config['sentry']['dsn'] == 'default_sentry_dsn' \
-        or config['django']['status'] == 'development':
+        or config['config']['status'] == 'development':
     # Les valeurs par défaut sont détectées, mettre à jour
     # le fichier config.ini
     config['django']['secret_key'] = django_secret_key
-    config['django']['status'] = 'production'
+    config['django']['config'] = 'production'
     config['sentry']['dsn'] = sentry_dsn
 
     # Enregistrer les modifications dans le fichier config.ini
@@ -38,5 +38,5 @@ if config['django']['secret_key'] == 'default_secret_key' \
 # Le fichier config.ini est prêt, continuer avec le reste du script
 
 django_secret_key = config.get('django', 'secret_key', raw=True)
-django_status = config.get('django', 'status', raw=True)
+django_status = config.get('config', 'status', raw=True)
 sentry_dsn = config.get('sentry', 'dsn', raw=True)

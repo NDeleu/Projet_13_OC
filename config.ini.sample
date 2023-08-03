@@ -1,5 +1,7 @@
 [django]
 secret_key = default_secret_key
+
+[config]
 status = development
 
 [sentry]
