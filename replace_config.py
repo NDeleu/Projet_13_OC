@@ -19,10 +19,6 @@ django_secret_key = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
 sentry_dsn = os.environ.get('SENTRY_DSN', 'default_sentry_dsn')
 django_status = os.environ.get('DJANGO_STATUS', 'development')
 
-print("DATAAA : ", django_secret_key)
-print("DATAAA : ", sentry_dsn)
-print("DATAAA : ", django_status)
-
 # Remplacer les valeurs dans le fichier config.ini
 config = configparser.ConfigParser(interpolation=None)
 config.read(config_file_path)
