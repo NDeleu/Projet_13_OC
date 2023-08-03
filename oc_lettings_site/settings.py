@@ -17,7 +17,17 @@ config = ConfigParser()
 config.read(config_file)
 
 django_secret_key = config.get('django', 'secret_key', raw=True)
+django_status = config.get('django', 'status', raw=True)
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
+
+if django_status == "development":
+    django_debug = True
+elif django_status == "production":
+    django_debug = False
+else:
+    sentry_sdk.capture_exception(Exception("Error: wrong django status"))
+    raise Exception("Error: wrong django status")
+
 
 # Configure Sentry
 sentry_sdk.init(
@@ -41,7 +51,7 @@ sentry_sdk.init(
 SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = django_debug
 
 ALLOWED_HOSTS = []
 
