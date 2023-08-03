@@ -2,6 +2,7 @@
 venv
 venv/
 __pycache__
+.idea/
 *.pyc
 *.pyo
 *.pyd
