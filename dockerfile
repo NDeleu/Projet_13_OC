@@ -22,7 +22,8 @@ COPY . .
 
 # Exécutez les migrations Django
 RUN python3 replace_config.py && \
-    python3 manage.py migrate
+    python3 manage.py migrate && \
+    python3 manage.py collectstatic --noinput
 
 # Exposez le port 8000
 EXPOSE 8000
