@@ -21,6 +21,7 @@ django_status = config.get('config', 'status')
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
 
 if django_status == "development":
+    print("ITSGOOOD", django_status)
     django_debug = True
 elif django_status == "production":
     django_debug = False
