@@ -9,17 +9,14 @@ stages:
 
 build-job:
   stage: build
+  variables:
+    DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
+    SENTRY_DSN: $SENTRY_DSN_GITLAB
+    DJANGO_STATUS: $DJANGO_STATUS_DEV_GITLAB
   script:
-    - export DJANGO_SECRET_KEY="$DJANGO_SECRET_KEY_GITLAB"
-    - export SENTRY_DSN="$SENTRY_DSN_GITLAB"
-    - export DJANGO_STATUS="$DJANGO_STATUS_DEV_GITLAB"
-    - printenv
-    - echo "$DJANGO_SECRET_KEY"
-    - echo "$SENTRY_DSN"
-    - echo "$DJANGO_STATUS"
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py $DJANGO_SECRET_KEY $SENTRY_DSN $DJANGO_STATUS
+    - python replace_config.py
     - echo "Compile complete."
 
 lint-test-job:
