@@ -29,7 +29,7 @@ lint-test-job:
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py $DJANGO_SECRET_KEY $SENTRY_DSN $DJANGO_STATUS
+    - python replace_config.py
     - flake8
     - echo "Linting complete."
   rules:
@@ -44,7 +44,7 @@ unit-test-job:
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py $DJANGO_SECRET_KEY $SENTRY_DSN $DJANGO_STATUS
+    - python replace_config.py
     - pytest --cov=.
     - coverage report --fail-under=80
     - echo "Test with coverage >= 80 complete."
@@ -81,7 +81,7 @@ deploy-job:
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py $DJANGO_SECRET_KEY $SENTRY_DSN $DJANGO_STATUS
+    - python replace_config.py
     - echo "Deploying application..."
     - python manage.py collectstatic --noinput
     - echo "Application successfully deployed."

@@ -21,14 +21,10 @@ django_status = config.get('config', 'status')
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
 
 if django_status == "development":
-    print("ITSGOOOD", django_status)
     django_debug = True
 elif django_status == "production":
     django_debug = False
 else:
-    print("DJANGOSECRET : ", django_secret_key)
-    print("DJANGOSTATUS : ", django_status)
-    print("SENTRYKEY : ", sentry_dsn)
     sentry_sdk.capture_exception(Exception("Error: wrong django status"))
     raise Exception("Error: wrong django status")
 
@@ -55,7 +51,6 @@ sentry_sdk.init(
 SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
-print("HOHOHO ", django_debug)
 DEBUG = django_debug
 
 ALLOWED_HOSTS = []
