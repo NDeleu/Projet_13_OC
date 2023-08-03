@@ -40,4 +40,6 @@ if config['django']['secret_key'] == 'default_secret_key' \
     with open(config_file_path, 'w') as configfile:
         config.write(configfile)
 
+print("YAHAYA : ", config.get('django', 'secret_key', raw=True))
+
 # Le fichier config.ini est prêt, continuer avec le reste du script
