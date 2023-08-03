@@ -7,6 +7,10 @@ stages:
   - package
   - deploy
 
+variables:
+  DJANGO_SECRET_KEY: DJANGO_SECRET_KEY_GITLAB
+  SENTRY_DSN: SENTRY_DSN_GITLAB
+
 cache:
   paths:
     - ~/.cache/pip
@@ -16,11 +20,13 @@ build-job:
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
+    - python replace_config.py
     - echo "Compile complete."
 
 lint-test-job:
   stage: linttest
   script:
+    - python replace_config.py
     - flake8
     - echo "Linting complete."
   rules:
@@ -29,6 +35,7 @@ lint-test-job:
 unit-test-job:
   stage: covtest
   script:
+    - python replace_config.py
     - pytest --cov=.
     - coverage report --fail-under=80
     - echo "Test with coverage >= 80 complete."
@@ -55,6 +62,7 @@ deploy-job:
     - master
   environment: production
   script:
+    - python replace_config.py
     - echo "Deploying application..."
     - python manage.py collectstatic --noinput
     - echo "Application successfully deployed."

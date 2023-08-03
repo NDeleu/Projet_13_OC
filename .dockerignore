@@ -1,0 +1,13 @@
+.venv
+venv
+venv/
+__pycache__
+*.pyc
+*.pyo
+*.pyd
+*.pyz
+.pytest_cache
+htmlcov
+oc_lettings_site/__pycache__
+**/__pycache__
+config.ini

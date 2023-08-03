@@ -1,5 +1,5 @@
 [django]
-secret_key = secret_key
+secret_key = default_secret_key
 
 [sentry]
-dsn = dsn
+dsn = default_sentry_dsn
