@@ -6,9 +6,6 @@ import sys
 def replace_config():
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print(sys.argv[1])
-        print(sys.argv[2])
-        print(sys.argv[3])
         print("Usage: python replace_config.py <DJANGO_SECRET_KEY> <SENTRY_DSN> <DJANGO_STATUS>")
         sys.exit(1)
 
