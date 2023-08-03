@@ -25,6 +25,7 @@ if django_status == "development":
 elif django_status == "production":
     django_debug = False
 else:
+    print("HAYAAAA : ", django_status)
     sentry_sdk.capture_exception(Exception("Error: wrong django status"))
     raise Exception("Error: wrong django status")
 
