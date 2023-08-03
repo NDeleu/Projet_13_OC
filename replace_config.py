@@ -33,4 +33,3 @@ if config['django']['secret_key'] == 'default_secret_key' \
         config.write(configfile)
 
 # Le fichier config.ini est prêt, continuer avec le reste du script
-
