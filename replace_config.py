@@ -1,6 +1,7 @@
 import os
 import configparser
 
+
 # Chemin vers le fichier config.ini
 config_file_path = 'config.ini'
 
@@ -18,8 +19,6 @@ if not os.path.exists(config_file_path):
 django_secret_key = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
 django_status = os.environ.get('DJANGO_STATUS', 'development')
 sentry_dsn = os.environ.get('SENTRY_DSN', 'default_sentry_dsn')
-
-print("REDJANGOO : ", django_secret_key)
 
 # Remplacer les valeurs dans le fichier config.ini
 config = configparser.ConfigParser(interpolation=None)
@@ -43,5 +42,3 @@ if config['django']['secret_key'] == 'default_secret_key' \
 django_secret_key = config.get('django', 'secret_key', raw=True)
 django_status = config.get('config', 'status', raw=True)
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
-
-print("DJANGOOOO : ", django_secret_key)
