@@ -54,10 +54,7 @@ package-job:
     - apk add --no-cache docker
     - apk add --no-cache build-base libffi-dev openssl-dev
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
-    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA \
-      --build-arg DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY_GITLAB \
-      --build-arg SENTRY_DSN=$SENTRY_DSN_GITLAB \
-      .
+    - docker build -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA --build-arg DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY_GITLAB --build-arg SENTRY_DSN=$SENTRY_DSN_GITLAB .
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
 
 deploy-job:
