@@ -9,11 +9,10 @@ stages:
 
 build-job:
   stage: build
-  variables:
-    DJANGO_SECRET_KEY: "$DJANGO_SECRET_KEY_GITLAB"
-    SENTRY_DSN: "$SENTRY_DSN_GITLAB"
-    DJANGO_STATUS: "$DJANGO_STATUS_DEV_GITLAB"
   script:
+    - export DJANGO_SECRET_KEY="$DJANGO_SECRET_KEY_GITLAB"
+    - export SENTRY_DSN="$SENTRY_DSN_GITLAB"
+    - export DJANGO_STATUS="$DJANGO_STATUS_DEV_GITLAB"
     - printenv
     - echo "$DJANGO_SECRET_KEY"
     - echo "$SENTRY_DSN"
