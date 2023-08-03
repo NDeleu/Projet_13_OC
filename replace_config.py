@@ -6,7 +6,6 @@ import sys
 def replace_config():
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print(sys.argv[3])
         print("Usage: python replace_config.py "
               "<DJANGO_SECRET_KEY> <SENTRY_DSN> <DJANGO_STATUS>")
         sys.exit(1)
@@ -41,8 +40,6 @@ def replace_config():
         config['django']['secret_key'] = django_secret_key
         config['config']['status'] = django_status
         config['sentry']['dsn'] = sentry_dsn
-
-        print(django_status)
 
         # Enregistrer les modifications dans le fichier config.ini
         with open(config_file_path, 'w') as configfile:

@@ -17,7 +17,7 @@ config = ConfigParser()
 config.read(config_file)
 
 django_secret_key = config.get('django', 'secret_key', raw=True)
-django_status = config.get('config', 'status', raw=True)
+django_status = config.get('config', 'status')
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
 
 if django_status == "development":
