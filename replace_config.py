@@ -16,6 +16,7 @@ if not os.path.exists(config_file_path):
 
 # Charger les variables GitLab CI/CD
 django_secret_key = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
+django_status = os.environ.get('DJANGO_STATUS', 'development')
 sentry_dsn = os.environ.get('SENTRY_DSN', 'default_sentry_dsn')
 
 # Remplacer les valeurs dans le fichier config.ini
@@ -28,7 +29,7 @@ if config['django']['secret_key'] == 'default_secret_key' \
     # Les valeurs par défaut sont détectées, mettre à jour
     # le fichier config.ini
     config['django']['secret_key'] = django_secret_key
-    config['django']['config'] = 'production'
+    config['django']['config'] = django_status
     config['sentry']['dsn'] = sentry_dsn
 
     # Enregistrer les modifications dans le fichier config.ini
@@ -40,3 +41,5 @@ if config['django']['secret_key'] == 'default_secret_key' \
 django_secret_key = config.get('django', 'secret_key', raw=True)
 django_status = config.get('config', 'status', raw=True)
 sentry_dsn = config.get('sentry', 'dsn', raw=True)
+
+print("DJANGOOOO : ", django_secret_key)

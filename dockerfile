@@ -10,6 +10,7 @@ RUN yum -y update && \
 ARG DJANGO_SECRET_KEY
 ARG SENTRY_DSN
 ENV DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+ENV DJANGO_STATUS="production"
 ENV SENTRY_DSN=$SENTRY_DSN
 
 # Installez les dépendances et copiez les fichiers de l'application
