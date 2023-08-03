@@ -15,8 +15,7 @@ ENV SENTRY_DSN=$SENTRY_DSN
 # Installez les dépendances et copiez les fichiers de l'application
 WORKDIR .
 COPY requirements.txt .
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+RUN pip install -r requirements.txt
 COPY . .
 
 # Exécutez les migrations Django
