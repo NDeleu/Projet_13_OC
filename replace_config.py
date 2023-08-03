@@ -18,7 +18,7 @@ django_secret_key = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
 sentry_dsn = os.environ.get('SENTRY_DSN', 'default_sentry_dsn')
 
 # Remplacer les valeurs dans le fichier config.ini
-config = configparser.ConfigParser()
+config = configparser.ConfigParser(interpolation=None)
 config.read(config_file_path)
 
 if config['django']['secret_key'] == 'default_secret_key' \
