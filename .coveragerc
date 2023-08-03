@@ -5,3 +5,4 @@ omit =
     manage.py
     wsgi.py
     asgi.py
+    replace_config.py
