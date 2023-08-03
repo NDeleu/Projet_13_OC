@@ -37,7 +37,7 @@ def replace_config():
         # Les valeurs par défaut sont détectées, mettre à jour
         # le fichier config.ini
         config['django']['secret_key'] = django_secret_key
-        config['django']['config'] = django_status
+        config['config']['status'] = django_status
         config['sentry']['dsn'] = sentry_dsn
 
         # Enregistrer les modifications dans le fichier config.ini
