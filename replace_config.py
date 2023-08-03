@@ -6,7 +6,7 @@ import sys
 def replace_config():
     # Check if the correct number of arguments is provided
     if len(sys.argv) != 4:
-        print(sys.argv[3])
+        print("DATAAAA : ", sys.argv[3])
         print("Usage: python replace_config.py "
               "<DJANGO_SECRET_KEY> <SENTRY_DSN> <DJANGO_STATUS>")
         sys.exit(1)
@@ -27,7 +27,7 @@ def replace_config():
     # Get the command-line arguments
     django_secret_key = sys.argv[1]
     sentry_dsn = sys.argv[2]
-    django_status = str(sys.argv[3])
+    django_status = sys.argv[3]
 
     # Remplacer les valeurs dans le fichier config.ini
     config = configparser.ConfigParser(interpolation=None)

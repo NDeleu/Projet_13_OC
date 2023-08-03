@@ -12,10 +12,11 @@ build-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
+    DJANGO_STATUS: "development"
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN development
+    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN DJANGO_STATUS
     - echo "Compile complete."
 
 lint-test-job:
@@ -23,10 +24,11 @@ lint-test-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
+    DJANGO_STATUS: "development"
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN development
+    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN DJANGO_STATUS
     - flake8
     - echo "Linting complete."
   rules:
@@ -37,10 +39,11 @@ unit-test-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
+    DJANGO_STATUS: "development"
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN development
+    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN DJANGO_STATUS
     - pytest --cov=.
     - coverage report --fail-under=80
     - echo "Test with coverage >= 80 complete."
@@ -72,10 +75,11 @@ deploy-job:
   variables:
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
     SENTRY_DSN: $SENTRY_DSN_GITLAB
+    DJANGO_STATUS: "development"
   script:
     - pip install --upgrade pip
     - pip install -r requirements.txt
-    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN development
+    - python replace_config.py DJANGO_SECRET_KEY SENTRY_DSN DJANGO_STATUS
     - echo "Deploying application..."
     - python manage.py collectstatic --noinput
     - echo "Application successfully deployed."
