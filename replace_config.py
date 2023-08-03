@@ -1,16 +1,5 @@
 import os
 import configparser
-import sys
-
-
-# Check if the correct number of arguments is provided
-if len(sys.argv) != 4:
-    print("DATAAAA : ", sys.argv[1])
-    print("DATAAAA : ", sys.argv[2])
-    print("DATAAAA : ", sys.argv[3])
-    print("Usage: python replace_config.py "
-          "<DJANGO_SECRET_KEY> <SENTRY_DSN> <DJANGO_STATUS>")
-    sys.exit(1)
 
 # Chemin vers le fichier config.ini
 config_file_path = 'config.ini'
@@ -26,9 +15,9 @@ if not os.path.exists(config_file_path):
         config.write(configfile)
 
 # Get the command-line arguments
-django_secret_key = sys.argv[1]
-sentry_dsn = sys.argv[2]
-django_status = sys.argv[3]
+django_secret_key = os.environ.get('DJANGO_SECRET_KEY', 'default_secret_key')
+sentry_dsn = os.environ.get('SENTRY_DSN', 'default_sentry_dsn')
+django_status = os.environ.get('DJANGO_STATUS', 'development')
 
 # Remplacer les valeurs dans le fichier config.ini
 config = configparser.ConfigParser(interpolation=None)
