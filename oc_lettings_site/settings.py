@@ -55,6 +55,7 @@ sentry_sdk.init(
 SECRET_KEY = django_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
+print("HOHOHO ", django_debug)
 DEBUG = django_debug
 
 ALLOWED_HOSTS = []
