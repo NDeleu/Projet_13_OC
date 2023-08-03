@@ -70,6 +70,9 @@ package-job:
     - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_REGISTRY_IMAGE:latest
     - docker push $CI_REGISTRY_IMAGE:latest
+    - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $DOCKER_REGISTRY_IMAGE:latest
+    - docker push $DOCKER_REGISTRY_IMAGE:latest
 
 deploy-job:
   stage: deploy
