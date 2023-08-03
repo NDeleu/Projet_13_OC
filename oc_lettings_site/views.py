@@ -24,13 +24,7 @@ def index(request):
             la réponse HTTP contenant la page d'accueil.
 
     """
-    try:
-        return render(request, 'oc_lettings_site/index.html')
-    except Exception as e:
-        # Enregistrement de l'exception dans les logs de Sentry
-        sentry_sdk.capture_exception(e)
-        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
-        return render(request, 'error.html', {'error_message': str(e)}, status=500)
+    return render(request, 'oc_lettings_site/index.html')
 
 
 def trigger_error(request):
@@ -48,8 +42,7 @@ def trigger_error(request):
 
     """
     try:
-        division_by_zero = 1 / 0
-        print(division_by_zero)
+        return 1/0
     except ZeroDivisionError as e:
         sentry_sdk.capture_exception(e)
         return render(

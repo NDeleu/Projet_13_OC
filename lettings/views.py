@@ -27,15 +27,9 @@ def index(request):
             de la récupération des locations.
 
     """
-    try:
-        lettings_list = Letting.objects.all()
-        context = {'lettings_list': lettings_list}
-        return render(request, 'lettings/index.html', context)
-    except Exception as e:
-        # Enregistrement de l'exception dans les logs de Sentry
-        sentry_sdk.capture_exception(e)
-        # Gérer l'exception (par exemple, afficher une page d'erreur personnalisée)
-        return render(request, 'error.html', {'error_message': str(e)})
+    lettings_list = Letting.objects.all()
+    context = {'lettings_list': lettings_list}
+    return render(request, 'lettings/index.html', context)
 
 
 # Cras ultricies dignissim purus, vitae hendrerit ex varius non. In accumsan

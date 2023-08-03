@@ -19,13 +19,9 @@ def index(request):
         HttpResponse: L'objet HttpResponse qui représente la réponse HTTP.
 
     """
-    try:
-        profiles_list = Profile.objects.all()
-        context = {'profiles_list': profiles_list}
-        return render(request, 'profiles/index.html', context)
-    except Exception as e:
-        sentry_sdk.capture_exception(e)
-        return render(request, 'error.html', {'error_message': str(e)})
+    profiles_list = Profile.objects.all()
+    context = {'profiles_list': profiles_list}
+    return render(request, 'profiles/index.html', context)
 
 
 # Aliquam sed metus eget nisi tincidunt ornare accumsan eget lac
