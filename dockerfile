@@ -22,11 +22,10 @@ COPY . .
 
 # Exécutez les migrations Django
 RUN python3 replace_config.py && \
-    python3 manage.py migrate && \
-    python3 manage.py collectstatic --noinput
+    python3 manage.py migrate
 
 # Exposez le port 8000
 EXPOSE 8000
 
-# Lancez le serveur Django
-CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+# Lancez le serveur Django après avoir collecté les fichiers statiques
+CMD ["sh", "-c", "python3 manage.py collectstatic --noinput && python3 manage.py runserver 0.0.0.0:8000"]

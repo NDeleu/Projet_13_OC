@@ -83,5 +83,4 @@ deploy-job:
     - pip install -r requirements.txt
     - python replace_config.py
     - echo "Deploying application..."
-    - python manage.py collectstatic --noinput
     - echo "Application successfully deployed."
