@@ -33,3 +33,9 @@ if config['django']['secret_key'] == 'default_secret_key' \
         config.write(configfile)
 
 # Le fichier config.ini est prêt, continuer avec le reste du script
+
+django_secret_key = config.get('django', 'secret_key', raw=True)
+sentry_dsn = config.get('sentry', 'dsn', raw=True)
+
+print("django : ", django_secret_key)
+print("sentry : ", sentry_dsn)
