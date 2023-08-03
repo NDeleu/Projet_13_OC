@@ -9,8 +9,9 @@ RUN yum -y update && \
 # Configurez les variables d'environnement Django
 ARG DJANGO_SECRET_KEY
 ARG SENTRY_DSN
+ARG DJANGO_STATUS
 ENV DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
-ENV DJANGO_STATUS="production"
+ENV DJANGO_STATUS=$DJANGO_STATUS
 ENV SENTRY_DSN=$SENTRY_DSN
 
 # Installez les dépendances et copiez les fichiers de l'application
