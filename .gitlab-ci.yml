@@ -81,7 +81,6 @@ package-job:
     - echo $(aws ecr get-login-password --region $AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $CI_AWS_ECR_REGISTRY
     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
-    - sed -i "s|imagearemplacer|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
 
 
 deploy-job:
@@ -95,6 +94,7 @@ deploy-job:
     - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
     - aws configure set default.region $AWS_DEFAULT_REGION
   script:
+  - sed -i "s|imagearemplacer|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
   - echo "Deploying application..."
   - aws ecs register-task-definition --cli-input-json file://task-definition.json
   - aws ecs update-service --cluster $CI_AWS_ECS_CLUSTER --service $CI_AWS_ECS_SERVICE --force-new-deployment
