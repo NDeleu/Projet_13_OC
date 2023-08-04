@@ -1,6 +1,18 @@
-Lettings functions
-===================
+General functions
+==================
 
-link fonction de l'app
-cas général
-renseigner ici entrée attendu et sorties possibles
+Here we find in General :
+
+Homepage
+---------
+
+The general `index`, the homepage:
+
+.. autofunction:: profiles.views.index
+
+Sentry test
+------------
+
+A test to check sentry exception trigger:
+
+.. autofunction:: profiles.views.profile
