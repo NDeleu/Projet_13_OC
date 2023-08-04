@@ -4,7 +4,7 @@
     "containerDefinitions": [
         {
             "name": "jinx-oc-app",
-            "image": "image",
+            "image": "imagearemplacer",
             "essential": true,
             "portMappings": [
                 {
