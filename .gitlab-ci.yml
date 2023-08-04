@@ -81,7 +81,7 @@ package-job:
     - echo $(aws ecr get-login-password --region $AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $CI_AWS_ECR_REGISTRY
     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
     - docker push $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
-    - sed -i "s|image|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
+    - sed -i "s|imagearemplacer|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
 
 
 deploy-job:
