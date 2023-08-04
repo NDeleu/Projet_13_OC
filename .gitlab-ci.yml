@@ -57,6 +57,11 @@ package-job:
     - master
   services:
     - docker:dind
+  before_script:
+    - pip install awscli
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set default.region $AWS_DEFAULT_REGION
   variables:
     DOCKER_HOST: tcp://docker:2375
     DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
@@ -73,19 +78,24 @@ package-job:
     - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
     - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $DOCKER_REGISTRY_IMAGE:latest
     - docker push $DOCKER_REGISTRY_IMAGE:latest
+    - echo $(aws ecr get-login-password --region $AWS_DEFAULT_REGION) | docker login --username AWS --password-stdin $CI_AWS_ECR_REGISTRY
+    - docker tag $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
+    - docker push $CI_AWS_ECR_IMAGE:$CI_COMMIT_SHA
+    - sed -i "s|image|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
+
 
 deploy-job:
   stage: deploy
   only: 
     - master
   environment: production
-  variables:
-    DJANGO_SECRET_KEY: $DJANGO_SECRET_KEY_GITLAB
-    SENTRY_DSN: $SENTRY_DSN_GITLAB
-    DJANGO_STATUS: $DJANGO_STATUS_PROD_GITLAB
+  before_script:
+    - pip install awscli
+    - aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+    - aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+    - aws configure set default.region $AWS_DEFAULT_REGION
   script:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
-    - python replace_config.py
-    - echo "Deploying application..."
-    - echo "Application successfully deployed."
+  - echo "Deploying application..."
+  - aws ecs register-task-definition --cli-input-json file://task-definition.json
+  - aws ecs update-service --cluster $CI_AWS_ECS_CLUSTER --service $CI_AWS_ECS_SERVICE --force-new-deployment
+  - echo "Application successfully deployed."

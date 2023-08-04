@@ -13,3 +13,4 @@ oc_lettings_site/__pycache__
 **/__pycache__
 config.ini
 local_container_exe.bat
+task-definition.json
