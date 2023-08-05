@@ -2,6 +2,8 @@ import os
 import sys
 import django
 
+os.system("python replace_config.py")
+
 # Add the project root directory to the Python path
 sys.path.insert(0, os.path.abspath('../..'))
 os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site.settings'
