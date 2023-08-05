@@ -70,7 +70,7 @@ Local use in development
         Activate your virtual environment:
         ``source venv/bin/activate``
         Install your dependencies:
-        ``pip install -r requirements.txt`
+        ``pip install -r requirements.txt``
         When you have finished testing your application,
         you can exit the virtual environment by entering the command:
         ``deactivate``
