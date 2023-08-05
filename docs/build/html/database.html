@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Database &#8212; Python OC Lettings FR 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Description of the API" href="desc_api_menu.html" />
+    <link rel="prev" title="Requirements" href="requirements.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="database">
+<h1>Database<a class="headerlink" href="#database" title="Permalink to this heading">¶</a></h1>
+<section id="sqlite3">
+<h2>SQLite3<a class="headerlink" href="#sqlite3" title="Permalink to this heading">¶</a></h2>
+<p>The database we use for this application is SQLite (here SQLite3).</p>
+<p>SQLite is a lightweight, self-contained, file-oriented SQL database engine
+often used for small to medium-sized applications,
+due to its ease of installation and use.</p>
+<p>Why use SQLite3 ? :</p>
+<dl class="simple">
+<dt>1/ Easy setup: Django is configured to use SQLite by default when creating a new project.</dt><dd><p>In your Django settings file (settings.py) you will find the database configuration as <cite>DATABASE</cite>.</p>
+</dd>
+<dt>2/ No Server Required: Unlike other database management systems like PostgreSQL or MySQL,</dt><dd><p>SQLite does not require a separate server process. All data is stored in a single file,
+which is managed directly by the SQLite engine.</p>
+</dd>
+<dt>3/ Portability: Since the SQLite database is simply a file,</dt><dd><p>it is easy to copy and move to another location or system.</p>
+</dd>
+</dl>
+</section>
+<section id="presentation-of-objects-and-erd">
+<h2>Presentation of objects and ERD<a class="headerlink" href="#presentation-of-objects-and-erd" title="Permalink to this heading">¶</a></h2>
+<p>3 objects are represented in the database : Profile, Letting, Address .</p>
+<ul class="simple">
+<li><dl class="simple">
+<dt>Profile<span class="classifier">Representing a customers. linked to the django User model (django.contrib.auth.models).</span></dt><dd><p>Allows the identification of a user.</p>
+</dd>
+</dl>
+</li>
+<li><p>Letting : Representing a letting ticket. linked to an Address to identify its object.</p></li>
+<li><p>Address : Representing a rental property. The address of the property is provided.</p></li>
+</ul>
+</section>
+<section id="presentation-of-the-models">
+<h2>Presentation of the models<a class="headerlink" href="#presentation-of-the-models" title="Permalink to this heading">¶</a></h2>
+<p>Presentation of Model Classes :</p>
+<p>Profile : Representing a customers</p>
+<p>Letting : Representing a letting ticket</p>
+<p>Address : Representing a rental property</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python OC Lettings FR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_desc.html">Project description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_app.html">Installing the app</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Database</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sqlite3">SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-of-objects-and-erd">Presentation of objects and ERD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#presentation-of-the-models">Presentation of the models</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="desc_api_menu.html">Description of the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_cases_menu.html">User guide and user cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd_menu.html">CI/CD Pipeline</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="requirements.html" title="previous chapter">Requirements</a></li>
+      <li>Next: <a href="desc_api_menu.html" title="next chapter">Description of the API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Nicolas Deleu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/database.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

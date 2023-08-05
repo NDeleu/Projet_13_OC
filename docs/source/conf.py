@@ -5,16 +5,20 @@
 
 import os
 import sys
+import django
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'oc_lettings_site/settings'
+django.setup()
 
 # Add the project root directory to the Python path
-sys.path.insert(0, os.path.abspath('..'))
-sys.path.insert(0, os.path.abspath('../'))
-sys.path.insert(0, os.path.abspath('../oc_lettings_site/'))
-sys.path.insert(0, os.path.abspath('../oc_lettings_site/tests/'))
-sys.path.insert(0, os.path.abspath('../lettings/'))
-sys.path.insert(0, os.path.abspath('../lettings/tests/'))
-sys.path.insert(0, os.path.abspath('../profiles/'))
-sys.path.insert(0, os.path.abspath('../profiles/tests/'))
+sys.path.insert(0, os.path.abspath('../..'))
+sys.path.insert(0, os.path.abspath('../../'))
+sys.path.insert(0, os.path.abspath('../../oc_lettings_site/'))
+sys.path.insert(0, os.path.abspath('../../oc_lettings_site/tests/'))
+sys.path.insert(0, os.path.abspath('../../lettings/'))
+sys.path.insert(0, os.path.abspath('../../lettings/tests/'))
+sys.path.insert(0, os.path.abspath('../../profiles/'))
+sys.path.insert(0, os.path.abspath('../../profiles/tests/'))
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information

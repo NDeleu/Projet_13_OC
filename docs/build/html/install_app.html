@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Installing the app &#8212; Python OC Lettings FR 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quick Start" href="quick_start.html" />
+    <link rel="prev" title="Project description" href="project_desc.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="installing-the-app">
+<h1>Installing the app<a class="headerlink" href="#installing-the-app" title="Permalink to this heading">¶</a></h1>
+<section id="for-local-use-in-development">
+<h2>For local use in development<a class="headerlink" href="#for-local-use-in-development" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>How to install git ? :</p>
+<blockquote>
+<div><ul>
+<li><dl>
+<dt>For Windows:</dt><dd><p>1/ Go to the official git website at <a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a> and download the installer for Windows.
+2/ Run the .exe file you downloaded.
+3/ During the installation, you can leave all the default options,</p>
+<blockquote>
+<div><p>unless you have specific preferences.
+Perhaps the most important option is the choice of text editor for Git.
+If you don’t know which to choose, you can leave the default (which is Vim).</p>
+</div></blockquote>
+<dl class="simple">
+<dt>4/ After the installation is complete, you can check if Git was installed correctly</dt><dd><p>by opening a terminal (e.g. Git Bash, PowerShell, or the command line)
+and running the <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> command.
+This should show the version of Git that has been installed.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For MacOS:</dt><dd><dl class="simple">
+<dt>1/ You can install git on macOS using Homebrew, a package manager for macOS.</dt><dd><p>If you haven’t installed it yet, you can get it at <a class="reference external" href="https://brew.sh/">https://brew.sh/</a> .</p>
+</dd>
+<dt>2/ Once you’ve installed Homebrew, open a terminal and run the following command:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git</span></code>.</p>
+</dd>
+<dt>3/ After installation, you can check if Git was installed correctly</dt><dd><p>by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> in the terminal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+<dl class="simple">
+<dt>for Linux:</dt><dd><dl class="simple">
+<dt>1/ On most Linux distributions, Git is available in the system’s package manager.</dt><dd><p>For example, on Debian or Ubuntu, you can install
+git by running <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">git</span></code> in a terminal.</p>
+</dd>
+<dt>2/ After installation, you can check if Git was installed correctly</dt><dd><p>by running <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">--version</span></code> in the terminal.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>How to create a github account ? :</p>
+<blockquote>
+<div><p>1/ Go to the GitHub website at <a class="reference external" href="https://github.com/">https://github.com/</a> .
+2/ Click on the “Sign up” button in the upper right corner of the page.
+3/ Fill out the registration form. You will need to provide a username,</p>
+<blockquote>
+<div><p>an email address, and a password. The username you choose will be publicly
+visible and will be what you use to log into GitHub.</p>
+</div></blockquote>
+<p>4/ You will also need to pass a verification test to prove that you are not a robot.
+5/ After you’ve filled out the form and passed the test, click the “Create account” button.
+6/ GitHub will send you an email to verify your email address.</p>
+<blockquote>
+<div><p>Open this email and click the link to verify your email address.</p>
+</div></blockquote>
+<p>7/ Once you have verified your email address, you will be redirected to GitHub where you can start using your new account.</p>
+<p>Warning ! :
+To use Git from the command line and interact with your GitHub account,
+you will need to configure Git with your username and email address.
+You can do this by running the following commands in a terminal:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.name</span> <span class="pre">&quot;Your</span> <span class="pre">name&quot;</span></code>
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">config</span> <span class="pre">--global</span> <span class="pre">user.email</span> <span class="pre">&quot;Your</span> <span class="pre">email&quot;</span></code>
+Replace “Your name” with your GitHub username and “Your email”
+with the email address you used to sign up for GitHub.</p>
+</div></blockquote>
+</li>
+<li><p>How to create a gitlab account ? :</p>
+<blockquote>
+<div><p>1/ Go to the GitLab website at <a class="reference external" href="https://gitlab.com/">https://gitlab.com/</a> .
+2/ Click on the “Register” button in the upper right corner of the page.
+3/ Fill out the registration form.</p>
+<blockquote>
+<div><p>You will need to provide an email address, and a password.
+You will also need to choose a username, which will be publicly visible.</p>
+</div></blockquote>
+<p>4/ After you’ve filled out the form, click the “Register” button.
+5/ GitLab will send you an email to verify your email address.</p>
+<blockquote>
+<div><p>Open this email and click the link to verify your email address.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>6/ Once you have verified your email address, you will be redirected</dt><dd><p>to GitLab where you can start using your new account.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+<li><p>How to install Python ? :</p>
+<blockquote>
+<div><ul>
+<li><p>For Windows and MacOS:</p>
+<blockquote>
+<div><p>Visit the official Python website at <a class="reference external" href="https://www.python.org/">https://www.python.org/</a> .
+Click on the “Downloads” button and download the latest version of Python.
+The website will automatically recommend the best version for your operating system.</p>
+<p>After the installer is downloaded, run it.
+On the first installer page, make sure you check the box “Add Python to PATH”
+before clicking “Install Now”. This will set up the correct environment variables
+so you can run Python from the command line.</p>
+</div></blockquote>
+</li>
+<li><p>For Linux:</p>
+<blockquote>
+<div><p>Most Linux distributions come with Python pre-installed.
+You can check if Python is installed by opening a terminal and typing
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">--version</span></code> or <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">--version</span></code>.</p>
+<p>If Python isn’t installed, you can install it using your distribution’s package manager.
+For example, on Ubuntu, you can run <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code> followed by <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">python3</span></code>.</p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="for-local-use-in-production">
+<h2>For local use in production<a class="headerlink" href="#for-local-use-in-production" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>How to install Docker ? :</p>
+<blockquote>
+<div><ul>
+<li><p>For Windows or MacOS:</p>
+<blockquote>
+<div><p>1/ Visit Docker’s official website at <a class="reference external" href="https://www.docker.com/">https://www.docker.com/</a> .
+2/ Navigate to the “Get Docker” section or the “Products” -&gt; “Docker Desktop” section.
+3/ Choose the appropriate version for your operating system (Windows or MacOS).
+4/ Download Docker Desktop and install it by following the instructions provided by the installer.</p>
+</div></blockquote>
+</li>
+<li><p>For Linux:</p>
+<blockquote>
+<div><dl class="simple">
+<dt>1/ Update your existing list of packages:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p>
+</dd>
+<dt>2/ Install a few prerequisite packages which let apt use packages over HTTPS:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">apt-transport-https</span> <span class="pre">ca-certificates</span> <span class="pre">curl</span> <span class="pre">software-properties-common</span></code></p>
+</dd>
+<dt>3/ Add the GPG key for the official Docker repository to your system:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">curl</span> <span class="pre">-fsSL</span> <span class="pre">https://download.docker.com/linux/ubuntu/gpg</span> <span class="pre">|</span> <span class="pre">sudo</span> <span class="pre">apt-key</span> <span class="pre">add</span> <span class="pre">-</span></code></p>
+</dd>
+<dt>4/ Add the Docker repository to APT sources:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">add-apt-repository</span> <span class="pre">&quot;deb</span> <span class="pre">[arch=amd64]</span> <span class="pre">https://download.docker.com/linux/ubuntu</span> <span class="pre">$(lsb_release</span> <span class="pre">-cs)</span> <span class="pre">stable&quot;</span></code></p>
+</dd>
+<dt>5/ Update the package database with the Docker packages from the newly added repo:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">update</span></code></p>
+</dd>
+<dt>6/ Make sure you are about to install from the Docker repo instead of the default Ubuntu repo:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">apt-cache</span> <span class="pre">policy</span> <span class="pre">docker-ce</span></code></p>
+</dd>
+<dt>7/ Install Docker:</dt><dd><p><code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">docker-ce</span></code></p>
+</dd>
+</dl>
+<p>Docker should now be installed, the daemon started, and the process enabled to start on boot. Check that it’s running:
+<code class="docutils literal notranslate"><span class="pre">bash</span> <span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">status</span> <span class="pre">docker</span></code></p>
+<p>Remember, for Docker on Linux, you usually have to use sudo when running Docker commands.
+If you want to avoid typing sudo whenever you run the docker command, add your username to the docker group:
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">usermod</span> <span class="pre">-aG</span> <span class="pre">docker</span> <span class="pre">${USER}</span></code></p>
+<p>To apply the new group membership, you can log out of the server and back in, or you can type:
+<code class="docutils literal notranslate"><span class="pre">su</span> <span class="pre">-</span> <span class="pre">${USER}</span></code></p>
+<p>You will be prompted to enter your user’s password to continue.
+Afterward, you can confirm that your user is now added to the docker group by typing:
+<code class="docutils literal notranslate"><span class="pre">id</span> <span class="pre">-nG</span></code></p>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>How to create a dockerhub account ? :</p>
+<blockquote>
+<div><p>1/ Visit the Docker Hub website at <a class="reference external" href="https://hub.docker.com/">https://hub.docker.com/</a> .
+2/ Click on the “Sign Up” button, which you’ll find in the top-right corner of the page.
+3/ You’ll be asked to provide a Docker ID, email, and password.</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>Docker ID: This is the unique username you’ll use to log in to Docker Hub.</dt><dd><p>It can’t have any spaces or capital letters.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Email: This should be a valid email address where Docker can contact you.</dt><dd><p>You’ll need to confirm this email address before your Docker Hub account is fully active.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Password: This is the password you’ll use, along with your Docker ID,</dt><dd><p>to log in to Docker Hub. Make sure to create a strong password to secure your account.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<p>4/ Read and agree to the Docker Terms of Service by checking the box.
+5/ Click on “Sign Up”.
+6/ You’ll be sent an email to confirm your email address.</p>
+<blockquote>
+<div><p>Go to your email, open the confirmation email from Docker,
+and click on the confirmation link.</p>
+</div></blockquote>
+<dl class="simple">
+<dt>7/ Once you’ve confirmed your email address, you’re all set!</dt><dd><p>You can now log in to Docker Hub using your Docker ID and password.</p>
+</dd>
+</dl>
+</div></blockquote>
+</li>
+</ul>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python OC Lettings FR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_desc.html">Project description</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing the app</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#for-local-use-in-development">For local use in development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#for-local-use-in-production">For local use in production</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Quick Start</a></li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desc_api_menu.html">Description of the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_cases_menu.html">User guide and user cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd_menu.html">CI/CD Pipeline</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="project_desc.html" title="previous chapter">Project description</a></li>
+      <li>Next: <a href="quick_start.html" title="next chapter">Quick Start</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Nicolas Deleu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/install_app.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

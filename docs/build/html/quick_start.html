@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Quick Start &#8212; Python OC Lettings FR 1.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b3523f8e" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=af2ce170"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=4825356b"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Requirements" href="requirements.html" />
+    <link rel="prev" title="Installing the app" href="install_app.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="quick-start">
+<h1>Quick Start<a class="headerlink" href="#quick-start" title="Permalink to this heading">¶</a></h1>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Permalink to this heading">¶</a></h2>
+<p>For security measures, the repository used for the deployment of the site,
+including the CI/CD pipeline, the various images and
+environment variables (including sensitive data),
+are registered on a gitlab account which is not accessible to the public.
+If you want permission to access this repository,
+please contact the administrator.</p>
+<p>Nevertheless, in the desire to share with the public
+application features that are not sensitive,
+a github repository is available at this address: <a class="reference external" href="https://github.com/NDeleu/Projet_13_OC">https://github.com/NDeleu/Projet_13_OC</a></p>
+</section>
+<section id="local-use-in-development">
+<h2>Local use in development<a class="headerlink" href="#local-use-in-development" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Clone repository git:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For Windows:</dt><dd><p>Go to the root where you want the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\path_d_access\my_repo</span></code>
+Initialize git in your folder:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>
+Clone the git repository into your folder:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NDeleu/Projet_13_OC.git</span></code>
+You now have the application available on your environment.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Linux or MacOS:</dt><dd><p>Go to the root where you want the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path_d_access/my_repo</span></code>
+Initialize git in your folder:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span></code>
+Clone the git repository into your folder:
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/NDeleu/Projet_13_OC.git</span></code>
+You now have the application available on your environment.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Configure your virtual environment and install your dependencies:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For Windows:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\path_d_access\Python-OC-Lettings-FR</span></code>
+Create your virtual environment:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code>
+Activate your virtual environment:
+If you use Windows Powershell:
+<code class="docutils literal notranslate"><span class="pre">venv\Scripts\Activate.ps1</span></code>
+Else:
+<code class="docutils literal notranslate"><span class="pre">venv\Scripts\activate.bat</span></code>
+Install your dependencies:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>
+When you have finished testing your application,
+you can exit the virtual environment by entering the command:
+<code class="docutils literal notranslate"><span class="pre">deactivate</span></code>
+Attention ! Deactivate only if you are done testing the app.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Linux or MacOS:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path_d_access/Python-OC-Lettings-FR</span></code>
+Create your virtual environment:
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">venv</span> <span class="pre">venv</span></code>
+Activate your virtual environment:
+<code class="docutils literal notranslate"><span class="pre">source</span> <span class="pre">venv/bin/activate</span></code>
+Install your dependencies:
+<code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-r</span> <span class="pre">requirements.txt</span></code>
+When you have finished testing your application,
+you can exit the virtual environment by entering the command:
+<code class="docutils literal notranslate"><span class="pre">deactivate</span></code>
+Attention ! Deactivate only if you are done testing the app.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Start the server</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For Windows:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\path_d_access\Python-OC-Lettings-FR</span></code>
+Start the serveur with the command:
+<code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Linux or MacOS:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path_d_access/Python-OC-Lettings-FR</span></code>
+Start the serveur with the command:
+<code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Test the app:</p>
+<blockquote>
+<div><p>You can now test the application locally by opening a browser
+and filling in this link: <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>If you want to stop the process, press <cite>Ctrl+C</cite> in the terminal that is running the program.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="local-use-in-production">
+<h2>Local use in production<a class="headerlink" href="#local-use-in-production" title="Permalink to this heading">¶</a></h2>
+<ul>
+<li><p>Run docker in the background:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For Windows or MacOS :</dt><dd><p>Docker Desktop for Windows and Docker Desktop for Mac run as background applications
+once installed and launched. When Docker is running, you’ll see a little whale icon in the system tray
+(taskbar on Windows, menubar on Mac).
+Click on the icon corresponding to Docker if this is not the case to open Docker.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Linux :</dt><dd><p>On Linux, Docker is usually installed as a system service,
+which means it is automatically started and runs in the background at system startup.
+You can verify that Docker is running with the systemctl command:
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">status</span> <span class="pre">docker</span></code>
+This command should indicate that the Docker service is “active (running)”.
+If not, you can start the Docker service with the command:
+<code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">systemctl</span> <span class="pre">start</span> <span class="pre">docker</span></code></p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Run the docker command:</p>
+<blockquote>
+<div><ul class="simple">
+<li><dl class="simple">
+<dt>For Windows:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">C:\path_d_access\Python-OC-Lettings-FR</span></code>
+Then run the batch file by entering your docker username and password:
+<code class="docutils literal notranslate"><span class="pre">.\local_container_exe.bat</span> <span class="pre">username</span> <span class="pre">password</span></code>
+Be sure to replace username with your docker username and password with your docker password.</p>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>For Linux or MacOS:</dt><dd><p>Go to the root of the Python-OC-Lettings-FR folder.
+For this, In your command line, enter:
+<code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">/path_d_access/Python-OC-Lettings-FR</span></code>
+Grant execute permissions to the script by entering in your command line:
+<code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> <span class="pre">local_container_exe.sh</span></code>
+Then run the shell bash file by entering your docker username and password:
+<code class="docutils literal notranslate"><span class="pre">./local_container_exe.sh</span> <span class="pre">username</span> <span class="pre">password</span></code>
+Be sure to replace username with your docker username and password with your docker password.</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+</li>
+<li><p>Test the app:</p>
+<blockquote>
+<div><p>You can now test the application locally by opening a browser
+and filling in this link: <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a></p>
+<p>If you want to stop the process, follow the shutdown instructions
+provided when executing the previous script:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">stop</span> <span class="pre">&lt;ID&gt;</span></code>
+If you want to verify that your container is stopped:
+<code class="docutils literal notranslate"><span class="pre">docker</span> <span class="pre">ps</span></code>
+If no container appears, it means that your container is stopped.</p>
+</div></blockquote>
+</li>
+</ul>
+</section>
+<section id="on-the-site-in-deployment-and-production">
+<h2>On the site in deployment and production<a class="headerlink" href="#on-the-site-in-deployment-and-production" title="Permalink to this heading">¶</a></h2>
+<p>Open your browser and directly visit the link: <a class="reference external" href="http://jinx-oc-alb-1329939655.eu-north-1.elb.amazonaws.com/">http://jinx-oc-alb-1329939655.eu-north-1.elb.amazonaws.com/</a></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Python OC Lettings FR</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="project_desc.html">Project description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install_app.html">Installing the app</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Quick Start</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#warning">Warning</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-use-in-development">Local use in development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#local-use-in-production">Local use in production</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#on-the-site-in-deployment-and-production">On the site in deployment and production</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="requirements.html">Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database.html">Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="desc_api_menu.html">Description of the API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_cases_menu.html">User guide and user cases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cicd_menu.html">CI/CD Pipeline</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="install_app.html" title="previous chapter">Installing the app</a></li>
+      <li>Next: <a href="requirements.html" title="next chapter">Requirements</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Nicolas Deleu.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/quick_start.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
