@@ -67,8 +67,106 @@ which is managed directly by the SQLite engine.</p>
 <h2>Presentation of the models<a class="headerlink" href="#presentation-of-the-models" title="Permalink to this heading">¶</a></h2>
 <p>Presentation of Model Classes :</p>
 <p>Profile : Representing a customers</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="profiles.models.Profile">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">profiles.models.</span></span><span class="sig-name descname"><span class="pre">Profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profiles.models.Profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modèle représentant un profil utilisateur.</p>
+<dl class="simple">
+<dt>Attributes:</dt><dd><dl class="simple">
+<dt>user (OneToOneField): La relation un-à-un avec le modèle User</dt><dd><p>pour lier le profil à un utilisateur.</p>
+</dd>
+<dt>favorite_city (CharField): La ville préférée de l’utilisateur</dt><dd><p>(max 64 caractères, facultatif).</p>
+</dd>
+</dl>
+</dd>
+<dt>Methods:</dt><dd><dl class="simple">
+<dt>__str__: Retourne une représentation sous forme</dt><dd><p>de chaîne de caractères du profil.</p>
+</dd>
+</dl>
+</dd>
+<dt>Meta:</dt><dd><p>verbose_name_plural: Nom au pluriel utilisé dans l’administration.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="profiles.models.Profile.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#profiles.models.Profile.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="profiles.models.Profile.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#profiles.models.Profile.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <p>Letting : Representing a letting ticket</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.Letting">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lettings.models.Letting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modèle représentant une location.</p>
+<dl>
+<dt>Attributes:</dt><dd><p>title (CharField): Le titre de la location (max 256 caractères).
+address (OneToOneField): L’adresse de la location</p>
+<blockquote>
+<div><p>(relation un-à-un avec le modèle Address).</p>
+</div></blockquote>
+</dd>
+<dt>Methods:</dt><dd><dl class="simple">
+<dt>__str__: Retourne une représentation sous forme</dt><dd><p>de chaîne de caractères de la location.</p>
+</dd>
+</dl>
+</dd>
+<dt>Meta:</dt><dd><p>verbose_name_plural: Nom au pluriel utilisé dans l’administration.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Letting.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Letting.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Letting.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#lettings.models.Letting.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <p>Address : Representing a rental property</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="lettings.models.Address">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">lettings.models.</span></span><span class="sig-name descname"><span class="pre">Address</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lettings.models.Address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Modèle représentant une adresse.</p>
+<dl>
+<dt>Attributes:</dt><dd><dl class="simple">
+<dt>number (PositiveIntegerField): Le numéro de</dt><dd><p>l’adresse (entre 1 et 9999).</p>
+</dd>
+</dl>
+<p>street (CharField): Le nom de la rue (max 64 caractères).
+city (CharField): Le nom de la ville (max 64 caractères).
+state (CharField): Le code d’État ou de province (2 caractères min).
+zip_code (PositiveIntegerField): Le code postal (entre 1 et 99999).
+country_iso_code (CharField): Le code ISO du pays (3 caractères min).</p>
+</dd>
+<dt>Methods:</dt><dd><dl class="simple">
+<dt>__str__: Retourne une représentation sous forme</dt><dd><p>de chaîne de caractères de l’adresse.</p>
+</dd>
+</dl>
+</dd>
+<dt>Meta:</dt><dd><p>verbose_name_plural: Nom au pluriel utilisé dans l’administration.</p>
+</dd>
+</dl>
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Address.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#lettings.models.Address.DoesNotExist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="lettings.models.Address.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#lettings.models.Address.MultipleObjectsReturned" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 </section>
 

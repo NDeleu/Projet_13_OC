@@ -37,11 +37,39 @@
 <section id="for-index-list-view">
 <h2>For index (list view)<a class="headerlink" href="#for-index-list-view" title="Permalink to this heading">¶</a></h2>
 <p>What happens when we try to access the profiles index and it succeeds ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profiles.tests.test_views.ProfileViewsTest.test_index_view">
+<span class="sig-prename descclassname"><span class="pre">ProfileViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_index_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profiles.tests.test_views.ProfileViewsTest.test_index_view" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the index view returns a response with status code 200,</dt><dd><p>uses the correct template, and contains the username.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="for-profile-detail-view">
 <h2>For profile (detail view)<a class="headerlink" href="#for-profile-detail-view" title="Permalink to this heading">¶</a></h2>
 <p>What happens when we try to drill down on a profile detail and it succeeds ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profiles.tests.test_views.ProfileViewsTest.test_profile_view">
+<span class="sig-prename descclassname"><span class="pre">ProfileViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_profile_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profiles.tests.test_views.ProfileViewsTest.test_profile_view" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the profile view for a valid username</dt><dd><p>returns a response with status code 200, uses the correct template,
+and contains the username and favorite city.</p>
+</dd>
+</dl>
+</dd></dl>
+
 <p>What happens when we try to drill down into the details of a profile and it fails because the username is unknown ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="profiles.tests.test_views.ProfileViewsTest.test_profile_view_invalid_username">
+<span class="sig-prename descclassname"><span class="pre">ProfileViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_profile_view_invalid_username</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#profiles.tests.test_views.ProfileViewsTest.test_profile_view_invalid_username" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the profile view for an invalid username</dt><dd><p>returns a response that uses the error template.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 

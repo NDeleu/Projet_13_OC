@@ -37,10 +37,42 @@
 <section id="homepage">
 <h2>Homepage<a class="headerlink" href="#homepage" title="Permalink to this heading">¶</a></h2>
 <p>The general <cite>index</cite>, the homepage:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="profiles.views.index">
+<span class="sig-prename descclassname"><span class="pre">profiles.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profiles.views.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Affiche la liste de tous les profils.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request (HttpRequest): L’objet HttpRequest</dt><dd><p>qui représente la requête HTTP.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>HttpResponse: L’objet HttpResponse qui représente la réponse HTTP.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="sentry-test">
 <h2>Sentry test<a class="headerlink" href="#sentry-test" title="Permalink to this heading">¶</a></h2>
 <p>A test to check sentry exception trigger:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="profiles.views.profile">
+<span class="sig-prename descclassname"><span class="pre">profiles.views.</span></span><span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">username</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#profiles.views.profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Affiche le profil d’un utilisateur en fonction de son nom d’utilisateur.</p>
+<dl class="simple">
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request (HttpRequest): L’objet HttpRequest</dt><dd><p>qui représente la requête HTTP.</p>
+</dd>
+<dt>username (str): Le nom d’utilisateur de l’utilisateur</dt><dd><p>dont le profil doit être affiché.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><p>HttpResponse: L’objet HttpResponse qui représente la réponse HTTP.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 

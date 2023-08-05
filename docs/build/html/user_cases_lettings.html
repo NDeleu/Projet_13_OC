@@ -37,11 +37,38 @@
 <section id="for-index-list-view">
 <h2>For index (list view)<a class="headerlink" href="#for-index-list-view" title="Permalink to this heading">¶</a></h2>
 <p>What happens when we try to access the lettings index and it succeeds ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.tests.test_views.LettingViewsTest.test_index_view">
+<span class="sig-prename descclassname"><span class="pre">LettingViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_index_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lettings.tests.test_views.LettingViewsTest.test_index_view" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the ‘index’ view returns a 200 status code,</dt><dd><p>uses the correct template, and contains the expected content.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="for-letting-detail-view">
 <h2>For letting (detail view)<a class="headerlink" href="#for-letting-detail-view" title="Permalink to this heading">¶</a></h2>
 <p>What happens when we try to drill down on a letting detail and it succeeds ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.tests.test_views.LettingViewsTest.test_letting_view">
+<span class="sig-prename descclassname"><span class="pre">LettingViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_letting_view</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lettings.tests.test_views.LettingViewsTest.test_letting_view" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the ‘letting’ view returns a 200 status code,</dt><dd><p>uses the correct template, and contains the expected content.</p>
+</dd>
+</dl>
+</dd></dl>
+
 <p>What happens when we try to drill down into the details of a letting and it fails because the rental ID is unknown ? :</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="lettings.tests.test_views.LettingViewsTest.test_letting_view_invalid_id">
+<span class="sig-prename descclassname"><span class="pre">LettingViewsTest.</span></span><span class="sig-name descname"><span class="pre">test_letting_view_invalid_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lettings.tests.test_views.LettingViewsTest.test_letting_view_invalid_id" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>Test that the ‘letting’ view handles an invalid id</dt><dd><p>by displaying an error template.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 

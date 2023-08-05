@@ -37,10 +37,60 @@
 <section id="for-all-in-list-presentation">
 <h2>For all, in list presentation<a class="headerlink" href="#for-all-in-list-presentation" title="Permalink to this heading">¶</a></h2>
 <p>The <cite>index</cite> function in the <cite>lettings.views</cite> module:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="lettings.views.index">
+<span class="sig-prename descclassname"><span class="pre">lettings.views.</span></span><span class="sig-name descname"><span class="pre">index</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lettings.views.index" title="Permalink to this definition">¶</a></dt>
+<dd><p>Affiche la liste de toutes les locations disponibles.</p>
+<dl class="simple">
+<dt>Récupère toutes les instances du modèle Letting et</dt><dd><p>les affiche sur la page d’accueil.</p>
+</dd>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request (HttpRequest): L’objet HttpRequest représentant</dt><dd><p>la requête HTTP en cours.</p>
+</dd>
+</dl>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>HttpResponse: Une réponse HTTP avec le contenu</dt><dd><p>HTML de la page d’accueil affichant les locations.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>Exception: Si une erreur se produit lors</dt><dd><p>de la récupération des locations.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="for-an-individual-in-detail">
 <h2>For an individual, in detail<a class="headerlink" href="#for-an-individual-in-detail" title="Permalink to this heading">¶</a></h2>
 <p>The <cite>letting</cite> function in the <cite>lettings.views</cite> module:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="lettings.views.letting">
+<span class="sig-prename descclassname"><span class="pre">lettings.views.</span></span><span class="sig-name descname"><span class="pre">letting</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letting_id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#lettings.views.letting" title="Permalink to this definition">¶</a></dt>
+<dd><p>Affiche les détails d’une location spécifique.</p>
+<p>Récupère une instance du modèle Letting en fonction de
+l’ID donné et affiche ses détails.</p>
+<dl>
+<dt>Args:</dt><dd><dl class="simple">
+<dt>request (HttpRequest): L’objet HttpRequest représentant</dt><dd><p>la requête HTTP en cours.</p>
+</dd>
+</dl>
+<p>letting_id (int): L’ID de la location à afficher.</p>
+</dd>
+<dt>Returns:</dt><dd><p>HttpResponse: Une réponse HTTP avec le contenu HTML de la page
+affichant les détails de la location.</p>
+</dd>
+<dt>Raises:</dt><dd><p>Http404: Si la location avec l’ID donné n’existe pas.
+Exception: Si une erreur se produit lors de la</p>
+<blockquote>
+<div><p>récupération de la location.</p>
+</div></blockquote>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 </section>
 
