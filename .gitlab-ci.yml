@@ -97,5 +97,5 @@ deploy-job:
   - sed -i "s|imagearemplacer|${CI_AWS_ECR_IMAGE}:${CI_COMMIT_SHA}|g" task-definition.json
   - echo "Deploying application..."
   - aws ecs register-task-definition --cli-input-json file://task-definition.json
-  - aws ecs update-service --cluster $CI_AWS_ECS_CLUSTER --service $CI_AWS_ECS_SERVICE --force-new-deployment
+  - aws ecs update-service --cluster $CI_AWS_ECS_CLUSTER --service $CI_AWS_ECS_SERVICE --task-definition jinx-oc-task-def --force-new-deployment
   - echo "Application successfully deployed."
