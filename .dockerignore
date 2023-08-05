@@ -15,3 +15,4 @@ config.ini
 local_container_exe.bat
 task-definition.json
 docs/
+.readthedocs.yaml
