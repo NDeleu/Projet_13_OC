@@ -1,77 +1,34 @@
-## Résumé
+# Python OC Lettings FR
 
-Site web d'Orange County Lettings
+Python OC Lettings FR est une application développée pour Orange County Lettings dont l'objectif est la visualisation des clients et des propriétés locatives. Cette application est déployée sur AWS et le site est nommé "Holiday Homes".
 
-## Développement local
+## Dépendances
 
-### Prérequis
+L'application dépend des éléments suivants :
 
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+- Python 3.8
+- Django
+- Docker
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+## Documentation
 
-### macOS / Linux
+La documentation de l'application est réalisée avec Sphinx et est hébergée par Read the Docs. Vous pouvez y accéder en cliquant sur le lien suivant : [https://projet-13-oc.readthedocs.io/en/latest/](https://projet-13-oc.readthedocs.io/en/latest/)
 
-#### Cloner le repository
+## CI/CD
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
+Une pipeline CI/CD est mise en place sur GitLab. Pour des raisons de sécurité, l'accès à la version privée de GitLab et à la pipeline CI/CD n'est pas public du fait des informations sensibles. Si vous avez besoin d'accéder à ces ressources, veuillez contacter le développeur.
 
-#### Créer l'environnement virtuel
+## Code Source
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+Une version publique du dépôt de code source est disponible sur GitHub : [https://github.com/NDeleu/Projet_13_OC](https://github.com/NDeleu/Projet_13_OC)
 
-#### Exécuter le site
+## Panel d'administration
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+Pour accéder au panel d'administration :
 
-#### Linting
+1. Allez sur `http://localhost:8000/admin`
+2. Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
+## Contact
 
-#### Tests unitaires
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
-
-#### Base de données
-
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
-
-#### Panel d'administration
-
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
-
-### Windows
-
-Utilisation de PowerShell, comme ci-dessus sauf :
-
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+L'application a été développée par Nicolas Deleu. Si vous avez des questions ou des suggestions, n'hésitez pas à le contacter.
